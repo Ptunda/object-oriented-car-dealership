@@ -4,12 +4,17 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class DealershipFileManager {
 
     public static final String FILE_NAME = "dealership.csv";
 
     public Dealership getDealership() {
+
+        Dealership dealership = null;
+        ArrayList<Vehicle> inventory = new ArrayList<>();
+
 
         try {
 
@@ -26,7 +31,23 @@ public class DealershipFileManager {
                     String address = parts[1];
                     String phone = parts[2];
 
-                    Dealership dealership = new Dealership(name, address, phone);
+                    dealership = new Dealership(name, address, phone);
+
+                } else if (parts.length == 8) {
+
+                    int vin = Integer.parseInt(parts[0]);
+                    int year = Integer.parseInt(parts[1]);
+                    String make = parts[2];
+                    String model = parts[3];
+                    String vehicleType = parts[4];
+                    String color = parts[5];
+                    int odometer = Integer.parseInt(parts[6]);
+                    double price = Double.parseDouble(parts[7]);
+
+
+                    Vehicle vehicle = new Vehicle(vin, year, make, model, vehicleType, color, odometer, price);
+
+                    inventory.add(vehicle);
 
                 }
 
@@ -44,10 +65,7 @@ public class DealershipFileManager {
 
         }
 
-
-
-
-        return null; // Stub implementation
+        return dealership; // Stub implementation
     }
 
     public void saveDealership(Dealership dealership) {

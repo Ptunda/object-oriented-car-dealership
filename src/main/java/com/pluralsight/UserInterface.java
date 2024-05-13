@@ -8,7 +8,14 @@ public class UserInterface {
 
     public UserInterface() {
 
-        this.dealership = new Dealership("", "", "");
+        init();
+
+    }
+
+    private void init(){
+
+        DealershipFileManager dealershipFileManager = new DealershipFileManager();
+        this.dealership = dealershipFileManager.getDealership();
 
     }
 
