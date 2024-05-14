@@ -4,9 +4,11 @@ public class Program {
 
     public static void main(String[] args) {
 
-        UserInterface ui = new UserInterface();
+        // instance of the UserInterface
+        UserInterface userInterface = new UserInterface();
 
-        ui.display();
+        // calling the display() method of the userInterface object
+        userInterface.display();
 
 
     }

@@ -36,7 +36,7 @@ public class UserInterface {
         String choice;
         while (running){
             System.out.println("Menu:");
-            System.out.print("Enter your choice: ");
+            System.out.println("Enter your choice: ");
             System.out.println("1. Get vehicles by price range");
             System.out.println("2. Get vehicles by make and model");
             System.out.println("3. Get vehicle by year range");
