@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class UserInterface {
 
-
+    private final Scanner scanner = new Scanner(System.in);
     Dealership dealership;
 
     public UserInterface() {
@@ -15,7 +15,7 @@ public class UserInterface {
 
     }
 
-    private void init(){
+    private void init() {
 
         // Create an instance of DealershipFileManager and load the dealership
         DealershipFileManager dealershipFileManager = new DealershipFileManager();
@@ -32,9 +32,9 @@ public class UserInterface {
         boolean running = true;
 
         // Display menu options and process user commands
-        Scanner scanner = new Scanner(System.in);
         String choice;
-        while (running){
+        while (running) {
+
             System.out.println("Menu:");
             System.out.println("Enter your choice: ");
             System.out.println("1. Get vehicles by price range");
@@ -90,66 +90,80 @@ public class UserInterface {
         }
 
 
-
     }
 
     private void displayVehicles(ArrayList<Vehicle> vehicles) {
+
         System.out.println("Vehicles: ");
         for (Vehicle vehicle : vehicles) {
+
             System.out.println(vehicle);
+
         }
     }
 
     public void processGetByPriceRequest() {
+
         // get vehicles by price range
+
 
     }
 
     public void processGetByMakeModelRequest() {
+
         // get vehicles by make and model
+
 
     }
 
     public void processGetByYearRequest() {
+
         // get vehicles by year range
+
+
     }
 
     public void processGetByColorRequest() {
+
         // get vehicles by color
+
 
     }
 
     public void processGetByMileageRequest() {
+
         // get vehicles by mileage range
+
 
     }
 
     public void processGetByVehicleTypeRequest() {
+
         // get vehicles by type
+
 
     }
 
     public void processGetAllVehiclesRequest() {
+
         // get all vehicles
+
 
     }
 
     public void processAddVehicleRequest() {
+
         // add a vehicle
+
 
     }
 
     public void processRemoveVehicleRequest() {
+
         // remove a vehicle
+        
 
     }
-
-    public void processAllVehiclesRequest() {
-        // Get all vehicles from the dealership and display them
-        ArrayList<Vehicle> allVehicles = dealership.getAllVehicles();
-        displayVehicles(allVehicles);
-    }
-
 
 
 }
