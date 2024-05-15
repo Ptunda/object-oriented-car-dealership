@@ -4,22 +4,27 @@ import java.util.ArrayList;
 
 public class Dealership {
 
+    // private attributes
     private String name;
     private String address;
     private String phone;
-    private ArrayList<Vehicle> inventory;
+    ArrayList<Vehicle> inventory;
 
 
     // constructor
     public Dealership(String name, String address, String phone) {
+
         this.name = name;
         this.address = address;
         this.phone = phone;
         this.inventory = new ArrayList<>();
+
     }
 
 
-    // getters
+
+
+    // getters and setters
     public String getName() {
         return name;
     }
@@ -68,6 +73,7 @@ public class Dealership {
 
     }
 
+
     public ArrayList<Vehicle> getVehiclesByMakeModel(String make, String model) {
 
         ArrayList<Vehicle> vehicles = new ArrayList<>();
@@ -84,6 +90,7 @@ public class Dealership {
         return vehicles;
 
     }
+
 
     public ArrayList<Vehicle> getVehiclesByYear(int min, int max) {
 
@@ -103,6 +110,7 @@ public class Dealership {
 
     }
 
+
     public ArrayList<Vehicle> getVehiclesByColor(String color) {
 
         ArrayList<Vehicle> vehicles = new ArrayList<>();
@@ -119,6 +127,7 @@ public class Dealership {
         return vehicles;
 
     }
+
 
     public ArrayList<Vehicle> getVehiclesByMileage(int min, int max) {
 
@@ -137,6 +146,7 @@ public class Dealership {
 
     }
 
+
     public ArrayList<Vehicle> getVehiclesByType(String vehicleType) {
 
         ArrayList<Vehicle> vehicles = new ArrayList<>();
@@ -154,24 +164,25 @@ public class Dealership {
 
     }
 
+
     public ArrayList<Vehicle> getAllVehicles() {
 
         return inventory;
+
 
     }
 
     public void addVehicle(Vehicle vehicle) {
 
-        // add vehicle to inventory
         inventory.add(vehicle);
-
 
     }
 
+
     public void removeVehicle(Vehicle vehicle) {
 
-        // remove vehicle from inventory
         inventory.remove(vehicle);
+
 
     }
 

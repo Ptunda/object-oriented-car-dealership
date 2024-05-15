@@ -1,20 +1,17 @@
 package com.pluralsight;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 
 public class DealershipFileManager {
 
-    public static final String FILE_NAME = "dealership.csv";
+    private static final String FILE_NAME = "dealership.csv";
 
     public Dealership getDealership() {
 
         Dealership dealership = null;
-        ArrayList<Vehicle> inventory = new ArrayList<>();
 
+        ArrayList<Vehicle> inventory = new ArrayList<>();
 
         try {
 
@@ -65,11 +62,53 @@ public class DealershipFileManager {
 
         }
 
-        return dealership; // Stub implementation
+        if (dealership != null){
+
+            for (Vehicle vehicle : inventory) {
+
+                dealership.addVehicle(vehicle);
+
+            }
+
+        }
+
+        return dealership;
     }
 
     public void saveDealership(Dealership dealership) {
-        // Stub implementation
+
+
+        try  {
+
+            // overwrite the content of the file
+            FileWriter fileWriter = new FileWriter(FILE_NAME, false);
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+
+
+            // Write dealership information
+            bufferedWriter.write(dealership.getName() + "|" + dealership.getAddress() + "|" + dealership.getPhone() + "\n");
+
+
+            // Write inventory information
+            ArrayList<Vehicle> inventory = dealership.getAllVehicles();
+
+            for (Vehicle vehicle : inventory) {
+
+                bufferedWriter.write(vehicle.getVin() + "|" + vehicle.getYear() + "|" + vehicle.getMake() + "|" + vehicle.getModel() + "|" +
+                        vehicle.getVehicleType() + "|" + vehicle.getColor() + "|" + vehicle.getOdometer() + "|" + vehicle.getPrice() + "\n");
+
+            }
+
+            bufferedWriter.flush();
+            bufferedWriter.close();
+
+        } catch (IOException e) {
+
+            System.out.println("Error writing to file.");
+
+        }
+
     }
+
 
 }
