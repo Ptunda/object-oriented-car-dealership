@@ -3,8 +3,11 @@
 ## Description of the Project
 
 The Vehicle Dealership System is a Java console application designed to manage the inventory of a vehicle dealership. It allows users to add new vehicles, remove vehicles, and search for vehicles based on various criteria such as price, make, model, year, color, mileage, and type. This application is intended for dealership managers, salespersons, and employees who need to efficiently manage and track their vehicle inventory.
-
-![Class Diagram](path/to/your/class_diagram.png)
+<br><br>
+<figure>
+  <img src="Screenshot 2024-05-15 201211.png">
+  <figcaption><i>Class Screenshot showing all related classes, files, and technologies used in this project</i></figcaption>
+</figure>
 
 ## User Stories
 
