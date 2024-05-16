@@ -41,9 +41,11 @@ Follow these steps to get your application running within IntelliJ IDEA:
 
 ## Demo
 
-Include screenshots or GIFs that show your application in action.
-
-![Application Screenshot](path/to/your/screenshot.png)
+<br>
+<figure>
+  <img src="video1291227444.gif">
+  <figcaption><i>GIF to demo program functionality</i></figcaption>
+</figure>
 
 ## Future Work
 
